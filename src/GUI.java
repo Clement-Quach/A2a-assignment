@@ -2,6 +2,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GUI {
+
+    public void run() {
+        System.out.println("hi");
+    }
     
     public static void main(String[] args) {
         //create a test 3d array to display
