@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 public class GUI {
 
@@ -23,6 +24,12 @@ public class GUI {
             frame.setSize(1600, 1600); // Adjust the size as needed
 
             GridPanel gridPanel = new GridPanel(100, 100, array);
+            MouseListener mouseListener = new MouseAdapter() {
+                 public void mouseClicked(MouseEvent e) {
+               System.out.println("29 here");
+            }
+            };
+            gridPanel.addMouseListener(mouseListener);
             frame.add(gridPanel);
 
             frame.setVisible(true);
@@ -35,6 +42,7 @@ class GridPanel extends JPanel {
     private int cols;
     int arr[][][];
     public GridPanel(int rows, int cols) {
+       
         this.rows = rows;
         this.cols = cols;
 
@@ -51,6 +59,9 @@ class GridPanel extends JPanel {
             }
         });
     }    public GridPanel(int rows, int cols, int worldArr[][][]) {
+
+
+
         this.arr = worldArr;
         this.rows = rows;
         this.cols = cols;
