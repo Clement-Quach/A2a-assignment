@@ -1,29 +1,42 @@
 public class Cell {
-  // private Creature creature;
+  private Creature creature;
+  private int chooseNumber;
 
-  // public Cell(int index) {
-  //   creature = new Creature();
-  // }
+  public Cell(int index) {
+    addCreature(index);
 
-    public Cell(int species){
-
-    }
-
+  }
+  
+  public int callToMove(){
+    return 5;
+  }
+  
   public boolean callReproduce() {
     return true;
   }
-
-  public boolean wantToEat() {
+  
+  public boolean wantToEat(Creature c) {
     return true;
   }
-
-  public void addCreature() {
-
+  
+  public void addCreature(Creature c){
+    this.creature = c;
   }
 
-  // public Creature getCreature() {
+  public void addCreature(int index) {
+    
+    if(index > 80){
+    creature = new Plant();
+    
+    } else if (index > 65){
+      creature = new Herbivore();
+      
+    }
+  }
 
-  // }
+  public Creature getCreature() {
+    return this.creature;
+  }
 
   public void clear() {
 
