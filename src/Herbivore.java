@@ -1,5 +1,11 @@
 public class Herbivore extends Creature{
 
+    private int RGB[] = {0,255,0};
+
+    public int[] getRGB(){
+        return RGB;
+    }
+
     public boolean Eat(Creature creature) {
         if (creature instanceof herbivoreEdible) {
             this.daysSinceEating = 0;

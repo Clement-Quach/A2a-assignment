@@ -1,6 +1,6 @@
 public class Cell {
   private Creature creature;
-  private int chooseNumber;
+
 
   public Cell(int index) {
     addCreature(index);

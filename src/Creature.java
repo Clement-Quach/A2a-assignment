@@ -1,5 +1,6 @@
 abstract class Creature {
 
+ 
     protected int daysSinceEating;
     protected int aliveFor;
     public abstract boolean Eat(Creature creature);
@@ -9,4 +10,6 @@ abstract class Creature {
     public abstract boolean reproduce();
 
     public abstract boolean die();
+
+    public abstract int[] getRGB();
 }

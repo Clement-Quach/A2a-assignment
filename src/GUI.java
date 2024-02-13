@@ -1,38 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI {
     
-    public static void main(String[] args) {
+    public GUI(int InArray[][][]){
         //create a test 3d array to display
-        int col = 100;
-        int row = 100;
-        int array[][][] = new int[col][row][3];
 
-        for(int y = 0; y < row; y++){
-            for (int x = 0; x < col; x++){
-                int nm = RandomGenerator.nextNumber(100);
-                if(nm < 30){
-                    array[x][y][0] = 0;
-                    array[x][y][1] = 255;
-                    array[x][y][2] = 0;
+        int array[][][] = InArray;
 
-                } else if ( nm >= 30 && nm < 45){
-                    array[x][y][0] = 255;
-                    array[x][y][1] = 255;
-                    array[x][y][2] = 0;
-
-                } else {
-                    array[x][y][0] = 255;
-                    array[x][y][1] = 255;
-                    array[x][y][2] = 255;
-                }
-            }
-        }
- 
-    
-       
-            
 
         
 
@@ -53,7 +30,23 @@ class GridPanel extends JPanel {
     private int rows;
     private int cols;
     int arr[][][];
-    public GridPanel(int rows, int cols, int worldArr[][][]) {
+    public GridPanel(int rows, int cols) {
+        this.rows = rows;
+        this.cols = cols;
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                int cellWidth = getWidth() / cols;
+                int cellHeight = getHeight() / rows;
+
+                int clickedRow = e.getY() / cellHeight;
+                int clickedCol = e.getX() / cellWidth;
+
+                System.out.println("Clicked on cell: (" + clickedRow + ", " + clickedCol + ")");
+            }
+        });
+    }    public GridPanel(int rows, int cols, int worldArr[][][]) {
         this.arr = worldArr;
         this.rows = rows;
         this.cols = cols;
