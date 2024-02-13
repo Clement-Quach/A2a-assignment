@@ -25,7 +25,7 @@ public class Cell {
 
   public void addCreature(int index) {
     
-    if(index > 80){
+    if (index > 80){
     creature = new Plant();
     
     } else if (index > 65){
@@ -39,13 +39,13 @@ public class Cell {
   }
 
   public void clear() {
-
+    this.creature = null;
   }
 
   public void die() {
-
+    if (creature != null && creature.die()) {
+      clear();
+    }
   }
-
-
 
 }

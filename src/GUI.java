@@ -30,11 +30,6 @@ public class GUI {
             }
         }
  
-    
-       
-            
-
-        
 
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Grid App");
