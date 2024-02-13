@@ -5,6 +5,10 @@ public class Cell {
   //   creature = new Creature();
   // }
 
+    public Cell(int species){
+
+    }
+
   public boolean callReproduce() {
     return true;
   }
