@@ -4,6 +4,10 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class GUI {
+
+    public void run() {
+        System.out.println("hi");
+    }
     
     public GUI(int InArray[][][]){
         //create a test 3d array to display
