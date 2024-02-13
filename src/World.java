@@ -18,10 +18,16 @@ public class World {
     int rgbArray[][][] = new int[cellArr.length][cellArr[0].length][3];
     for(int y = 0; y < cellArr[0].length; y++){
       for(int x = 0; x < cellArr.length; x++){
+        if(cellArr[x][y].getCreature() == null){
+          rgbArray[x][y][0] = 255;
+          rgbArray[x][y][1] = 255;
+          rgbArray[x][y][2] = 255;
+        } else {
         rgbArray[x][y][0] = cellArr[x][y].getCreature().getRGB()[0];        
         rgbArray[x][y][1] = cellArr[x][y].getCreature().getRGB()[1];
         rgbArray[x][y][2] = cellArr[x][y].getCreature().getRGB()[2];
       }
+    }
     }
     return rgbArray;
   }
